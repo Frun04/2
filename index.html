@@ -30,12 +30,15 @@
             max-height: 300px; /* Máxima altura de las imágenes */
             object-fit: contain; /* Ajusta las imágenes dentro del contenedor */
         }
+        .swiper-button-next, .swiper-button-prev {
+            color: #ffffff; /* Color de las flechas */
+        }
         .linea {
             width: 100%;
             text-align: center;
             margin: 10px 0; /* Espacio vertical entre líneas de texto */
         }
-        .center{
+        .center {
             text-align: center;
         }
         .izquierda {
@@ -48,16 +51,17 @@
 </head>
 <body>
     <h1>PackPresso</h1>
-    <p class= "center">Párrafo centrado.</p>
+    <p class="center">Párrafo centrado.</p>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="xavimola.jpeg" alt="Este es Xavi Molero Prieto, un respeto "></div>
             <div class="swiper-slide"><img src="ur10e.jpg" alt="Segunda imagen intercalada"></div>
-            <div class="swiper-slide"><img src="abb irb360.jpg" alt="Segunda imagen intercalada"></div>
+            <div class="swiper-slide"><img src="abb irb360.jpg" alt="Tercera imagen intercalada"></div>
             <!-- Agrega más imágenes aquí según sea necesario -->
         </div>
-        <!-- Agregar paginación -->
-        <div class="swiper-pagination"></div>
+        <!-- Agregar botones de navegación -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
     <div class="linea">
         <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
@@ -74,76 +78,15 @@
     <div class="linea">
         <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
         <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
-        <div class="linea">
-            <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
-            <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
-        </div>
-        <div class="linea">
-            <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
-            <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
-        </div>
-        <div class="linea">
-            <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
-            <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
-        </div>
-        <div class="linea">
-            <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
-            <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
-            <div class="linea">
-                <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
-                <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
-            </div>
-            <div class="linea">
-                <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
-                <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
-            </div>
-            <div class="linea">
-                <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
-                <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
-            </div>
-            <div class="linea">
-                <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
-                <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
-                <div class="linea">
-                    <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
-                    <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
-                </div>
-                <div class="linea">
-                    <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
-                    <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
-                </div>
-                <div class="linea">
-                    <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
-                    <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
-                </div>
-                <div class="linea">
-                    <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
-                    <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
-                    <div class="linea">
-                        <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
-                        <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
-                    </div>
-                    <div class="linea">
-                        <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
-                        <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
-                    </div>
-                    <div class="linea">
-                        <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
-                        <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
-                    </div>
-                    <div class="linea">
-                        <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
-                        <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
     </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
-            // Opciones del carrusel
             loop: true, // Repetir el carrusel al final
-            pagination: {
-                el: '.swiper-pagination', // Selector del elemento de paginación
-                clickable: true, // Permitir hacer clic en los botones de paginación
+            navigation: {
+                nextEl: '.swiper-button-next', // Selector del botón siguiente
+                prevEl: '.swiper-button-prev', // Selector del botón anterior
             },
         });
     </script>
