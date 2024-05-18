@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PackPresso</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         body {
             background-color: #333333; /* Gris oscuro */
@@ -15,19 +16,25 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 20px; /* Margen alrededor del cuerpo */
         }
         h1 {
             font-size: 3em; /* Tamaño de fuente grande para el título */
-            font-family: 'Eras Bold ITC', serif; /* Fuente específica para el título */
+            font-family: 'SHRIKHAND', serif; /* Fuente específica para el título */
             margin: 0.5em 0; /* Margen vertical */
             text-align: center; /* Centra el texto dentro del contenedor */
         }
-        img {
-            max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-            height: auto; /* Mantiene la proporción de la imagen */
-            margin-top: 20px; /* Espacio entre el título y la imagen */
+        .swiper-container {
+            width: 100%;
+            height: 400px; /* Altura del carrusel */
+            margin-top: 20px; /* Espacio entre el título y el carrusel */
         }
-        .centrado {
+        .swiper-slide img {
+            width: 100%; /* Ajusta el tamaño de las imágenes al carrusel */
+            height: auto; /* Mantiene la proporción */
+        }
+        .linea {
+            width: 100%;
             text-align: center;
         }
         .izquierda {
@@ -41,18 +48,34 @@
 <body>
     <h1>PackPresso</h1>
     <p>Párrafo centrado.</p>
-    <img src="xavimola.jpeg" alt="Este es Xavi Molero Prieto, un respeto ">
-    <div class="centrado">
-        <p>Aquí debería de haber texto centrado 1</p>
-        <p>Aquí debería de haber texto centrado 2</p>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="xavimola.jpeg" alt="Este es Xavi Molero Prieto, un respeto "></div>
+            <div class="swiper-slide"><img src="Luffy-Marineford.jpg" alt="Este es Xavi Molero Prieto, un respeto "></div>
+            <!-- Agrega más imágenes aquí según sea necesario -->
+        </div>
+        <!-- Agregar paginación -->
+        <div class="swiper-pagination"></div>
     </div>
-    <div class="izquierda">
-        <p>Aquí debería de haber texto a la izquierda 1</p>
-        <p>Aquí debería de haber texto a la izquierda 2</p>
+    <div class="linea">
+        <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
+        <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
     </div>
-    <div class="derecha">
-        <p>Aquí debería de haber texto a la derecha 1</p>
-        <p>Aquí debería de haber texto a la derecha 2</p>
+    <div class="linea">
+        <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
+        <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
     </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            // Opciones del carrusel
+            loop: true, // Repetir el carrusel al final
+            pagination: {
+                el: '.swiper-pagination', // Selector del elemento de paginación
+                clickable: true, // Permitir hacer clic en los botones de paginación
+            },
+        });
+    </script>
 </body>
 </html>
