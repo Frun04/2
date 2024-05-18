@@ -14,8 +14,15 @@
         h1 {
             font-size: 3em; /* Tamaño de fuente grande para el título */
             font-family: 'SHRIKHAND', serif; /* Fuente específica para el título */
-            margin: 20px 0 1em 0; /* Margen vertical (arriba), sin margen (derecha/abajo/izquierda) */
+            margin: 20px 0 0 0; /* Margen vertical (arriba), sin margen (derecha/abajo/izquierda) */
             text-align: center; /* Centra el texto dentro del contenedor */
+        }
+        h2 {
+            text-align: center; /* Centra el texto */
+            border: 2px solid #126ccd; /* Color y grosor del borde */
+            padding: 10px; /* Espacio interno */
+            border-radius: 10px; /* Bordes redondeados */
+            margin: 75px 0 0 0; /* Margen superior */
         }
         .layout-container {
             display: flex;
@@ -42,47 +49,48 @@
             max-width: 50%; /* Ajusta el ancho máximo de la imagen al 50% */
             height: auto; /* Mantiene la proporción */
         }
-        .linea {
-            width: 100%;
-            text-align: center;
-            margin: 10px 0; /* Espacio vertical entre líneas de texto */
-        }
-        .center {
-            text-align: center;
-        }
-        .izquierda {
-            text-align: left;
-        }
-        .derecha {
-            text-align: right;
-        }
         .texto {
             margin-top: 10px; /* Espacio entre la imagen y el texto */
+        }
+        .full-width {
+            width: 100%; /* Ancho completo para asegurar que los elementos no estén en columnas */
+            text-align: center; /* Centrar el texto */
+            margin-top: 20px; /* Espacio superior para separar de los elementos anteriores */
+        }
+        .full-width p {
+            margin: 0 auto; /* Centrar el párrafo */
+            max-width: 800px; /* Limitar el ancho del párrafo para mejor legibilidad */
         }
     </style>
 </head>
 <body>
     <h1>PackPresso</h1>
-    <h2 class="center">Layout de la Estación:</h2>
+    <h2>Layout de la Estación:</h2>
     <div class="layout-container">
         <img src="LayoutBno.jpg" alt="Imagen del layout de la planta">
     </div>
-    <h2 class="center">Robots Utilizados:</h2>
+    <h2>Robots Utilizados:</h2>
     <div class="image-container">
         <div>
             <img src="ur10e.jpg" alt="Imagen del cobot ur10e">
-            <p class="texto">Un cobot capaz de manipular cargas de hasta 10 kg suficiente para
-                 manipular las cajas llenas de cápsulas de café. El robot las recibe a través de 
-                 una cinta y las deposita en un paquete grande de 20 unidades.
-            </p>
+            <p class="texto">Un cobot capaz de manipular cargas de hasta 10 kg suficiente
+                 para manipular las cajas llenas de cápsulas de café. El robot las recibe
+                  a través de una cinta y las deposita en un paquete grande de 20 unidades. </p>
         </div>
         <div>
             <img src="abb irb360.jpg" alt="Imagen del robot industrial abb irb360">
-            <p class="texto">Robot delta empleado en el empaquetado de las cápsulas de café, 
-                con una capacidad de carga máxima de 1 kg, será el encargado de coger las 
-                cápsulas de la cinta en movimiento y almacenarlas en paquetes de 10 unidades 
-                y dejar el paquete en la siguiente cinta del proceso</p>
+            <p class="texto">Robot delta empleado en el empaquetado de las cápsulas de café,
+                 con una capacidad de carga máxima de 1 kg, será el encargado de coger las
+                  cápsulas de la cinta en movimiento y almacenarlas en paquetes de 10 unidades 
+                  y dejar el paquete en la siguiente cinta del proceso.</p>
         </div>
-    
+    </div>
+    <h2>Objetivos de la automatización:</h2>
+    <div class="full-width">
+        <p>Con este Proyecto cumplimos con las expectativas de mejora en eficiencia y eficacia de la empresa.
+        Conseguimos aumentar la producción, medida en la cantidad de cápsulas que salen al día de fábrica,
+        ya que los robots trabajan de manera continua, sin descansos, y sin errores. Esto repercute de manera 
+        positiva en el beneficio de la empresa, a la vez que reduce los costes de obtención del producto final.</p>
+    </div>
 </body>
 </html>
