@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PackPresso</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         body {
             background-color: #3c3a3a; /* Gris oscuro */
@@ -18,52 +17,30 @@
             margin: 20px 0 1em 0; /* Margen vertical (arriba), sin margen (derecha/abajo/izquierda) */
             text-align: center; /* Centra el texto dentro del contenedor */
         }
-        .image-container {
-            position: relative;
+        .layout-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Centra la imagen del layout horizontalmente */
             margin-top: 20px;
         }
+        .layout-container img {
+            max-width: 100%;
+            height: auto; /* Mantiene la proporción */
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Divide el contenedor en dos columnas de igual tamaño */
+            gap: 20px; /* Espacio entre las imágenes */
+            margin-top: 20px;
+        }
+        .image-container div {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra las imágenes y el texto dentro de las columnas */
+        }
         .image-container img {
-            width: 100%;
-            max-width: 1600px; /* Ajusta el ancho máximo de la imagen */
+            width: 50%; /* Ajusta el ancho de la imagen al 50% */
+            max-width: 50%; /* Ajusta el ancho máximo de la imagen al 50% */
             height: auto; /* Mantiene la proporción */
-        }
-        .text-overlay {
-            position: relative;
-            right: 10px;
-            top: 10px;
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
-            color: white;
-            padding: 50px;
-            max-width: 45%;
-            font-size: 1.2em; /* Tamaño de fuente más pequeño */
-            line-height: 1.2em; /* Espaciado entre líneas más apretado */
-        }
-        .swiper-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px; /* Máximo ancho del carrusel */
-            margin: 20px auto; /* Espacio entre el título y el carrusel, y centrado horizontal */
-        }
-        .swiper-slide img {
-            width: 100%; /* Ajusta el tamaño de las imágenes al carrusel */
-            height: auto; /* Mantiene la proporción */
-            max-height: 300px; /* Máxima altura de las imágenes */
-            object-fit: contain; /* Ajusta las imágenes dentro del contenedor */
-        }
-        .swiper-button-next, .swiper-button-prev {
-            color: #ffffff; /* Color de las flechas */
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .swiper-button-next {
-            right: 10px;
-        }
-        .swiper-button-prev {
-            left: 10px;
         }
         .linea {
             width: 100%;
@@ -79,55 +56,33 @@
         .derecha {
             text-align: right;
         }
+        .texto {
+            margin-top: 10px; /* Espacio entre la imagen y el texto */
+        }
     </style>
 </head>
 <body>
     <h1>PackPresso</h1>
     <h2 class="center">Layout de la Estación:</h2>
-    <div class="image-container">
-        <img src="Layout Planta.jpeg" alt="Imagen del layout de la planta">
-        <div class="text-overlay">
-            Este Proyecto consiste en la automatización del empaquetado y transporte
-            de cápsulas de café, mediante el uso de cintas transportadoras, robots delta y cobots.
-        </div>
+    <div class="layout-container">
+        <img src="LayoutBno.jpg" alt="Imagen del layout de la planta">
     </div>
     <h2 class="center">Robots Utilizados:</h2>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="ur10e.jpg" alt="Imagen del cobot ur10e"></div>
-            <div class="swiper-slide"><img src="abb irb360.jpg" alt="Imagen del robot industrial abb irb360"></div>
-            <!-- Agrega más imágenes aquí según sea necesario -->
+    <div class="image-container">
+        <div>
+            <img src="ur10e.jpg" alt="Imagen del cobot ur10e">
+            <p class="texto">Un cobot capaz de manipular cargas de hasta 10 kg suficiente para
+                 manipular las cajas llenas de cápsulas de café. El robot las recibe a través de 
+                 una cinta y las deposita en un paquete grande de 20 unidades.
+            </p>
         </div>
-        <!-- Agregar botones de navegación -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
-    <div class="linea">
-        <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
-        <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
-    </div>
-    <div class="linea">
-        <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
-        <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
-    </div>
-    <div class="linea">
-        <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
-        <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
-    </div>
-    <div class="linea">
-        <p class="derecha">Aquí debería de haber texto a la derecha 3</p>  
-        <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
-    </div>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {            
-            loop: true, // Repetir el carrusel al final
-            navigation: {
-                nextEl: '.swiper-button-next', // Selector del botón siguiente
-                prevEl: '.swiper-button-prev', // Selector del botón anterior
-            },
-        });
-    </script>
+        <div>
+            <img src="abb irb360.jpg" alt="Imagen del robot industrial abb irb360">
+            <p class="texto">Robot delta empleado en el empaquetado de las cápsulas de café, 
+                con una capacidad de carga máxima de 1 kg, será el encargado de coger las 
+                cápsulas de la cinta en movimiento y almacenarlas en paquetes de 10 unidades 
+                y dejar el paquete en la siguiente cinta del proceso</p>
+        </div>
+    
 </body>
 </html>
