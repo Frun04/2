@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PackPresso</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         body {
             background-color: #3c3a3a; /* Gris oscuro */
@@ -61,6 +62,21 @@
             margin: 0 auto; /* Centrar el párrafo */
             max-width: 800px; /* Limitar el ancho del párrafo para mejor legibilidad */
         }
+        .integrantes-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .integrante {
+            text-align: center;
+        }
+
+        .integrante img {
+            width: 100px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -92,5 +108,31 @@
         ya que los robots trabajan de manera continua, sin descansos, y sin errores. Esto repercute de manera 
         positiva en el beneficio de la empresa, a la vez que reduce los costes de obtención del producto final.</p>
     </div>
+    <h2>Video Muestra de la Estación: </h2>
+
+    <p> Aquí va el video de muestra de la estación pero no ta :P</p>
+
+    <h2>Integrantes del grupo B2:</h2>
+    <div class="swiper-container integrantes-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide integrante"><img src="Fran.gif" alt="Imagen de Francesc"></div>
+            <div class="swiper-slide integrante"><img src="Enric.gif" alt="Imagen de Enric"></div>
+            <div class="swiper-slide integrante"><img src="Jaime.gif" alt="Imagen de Jaime"></div>
+            <div class="swiper-slide integrante"><img src="Alex.jpeg" alt="Imagen de Alex"></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.integrantes-container', {            
+            loop: true, // Repetir el carrusel al final
+            navigation: {
+                nextEl: '.swiper-button-next', // Selector del botón siguiente
+                prevEl: '.swiper-button-prev', // Selector del botón anterior
+            },
+        });
+    </script>
 </body>
 </html>
