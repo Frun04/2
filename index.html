@@ -7,22 +7,45 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         body {
-            background-color: #333333; /* Gris oscuro */
+            background-color: #3c3a3a; /* Gris oscuro */
             color: #ffffff; /* Blanco */
-            font-family: Arial, sans-serif; /* Fuente predeterminada para todo el cuerpo */
             margin: 0;
             padding: 20px; /* Margen alrededor del cuerpo */
         }
         h1 {
             font-size: 3em; /* Tamaño de fuente grande para el título */
             font-family: 'SHRIKHAND', serif; /* Fuente específica para el título */
-            margin: 0.5em 0; /* Margen vertical */
+            margin: 20px 0 1em 0; /* Margen vertical (arriba), sin margen (derecha/abajo/izquierda) */
             text-align: center; /* Centra el texto dentro del contenedor */
         }
+        .image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 1600px; /* Ajusta el ancho máximo de la imagen */
+            height: auto; /* Mantiene la proporción */
+        }
+        .text-overlay {
+            position: relative;
+            right: 10px;
+            top: 10px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+            color: white;
+            padding: 50px;
+            max-width: 45%;
+            font-size: 1.2em; /* Tamaño de fuente más pequeño */
+            line-height: 1.2em; /* Espaciado entre líneas más apretado */
+        }
         .swiper-container {
+            position: relative;
             width: 100%;
             max-width: 600px; /* Máximo ancho del carrusel */
-            margin-top: 20px; /* Espacio entre el título y el carrusel */
+            margin: 20px auto; /* Espacio entre el título y el carrusel, y centrado horizontal */
         }
         .swiper-slide img {
             width: 100%; /* Ajusta el tamaño de las imágenes al carrusel */
@@ -32,6 +55,15 @@
         }
         .swiper-button-next, .swiper-button-prev {
             color: #ffffff; /* Color de las flechas */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .swiper-button-next {
+            right: 10px;
+        }
+        .swiper-button-prev {
+            left: 10px;
         }
         .linea {
             width: 100%;
@@ -51,12 +83,19 @@
 </head>
 <body>
     <h1>PackPresso</h1>
-    <p class="center">Párrafo centrado.</p>
+    <h2 class="center">Layout de la Estación:</h2>
+    <div class="image-container">
+        <img src="Layout Planta.jpeg" alt="Imagen del layout de la planta">
+        <div class="text-overlay">
+            Este Proyecto consiste en la automatización del empaquetado y transporte
+            de cápsulas de café, mediante el uso de cintas transportadoras, robots delta y cobots.
+        </div>
+    </div>
+    <h2 class="center">Robots Utilizados:</h2>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="xavimola.jpeg" alt="Este es Xavi Molero Prieto, un respeto "></div>
-            <div class="swiper-slide"><img src="ur10e.jpg" alt="Segunda imagen intercalada"></div>
-            <div class="swiper-slide"><img src="abb irb360.jpg" alt="Tercera imagen intercalada"></div>
+            <div class="swiper-slide"><img src="ur10e.jpg" alt="Imagen del cobot ur10e"></div>
+            <div class="swiper-slide"><img src="abb irb360.jpg" alt="Imagen del robot industrial abb irb360"></div>
             <!-- Agrega más imágenes aquí según sea necesario -->
         </div>
         <!-- Agregar botones de navegación -->
@@ -76,13 +115,13 @@
         <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
     </div>
     <div class="linea">
-        <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
+        <p class="derecha">Aquí debería de haber texto a la derecha 3</p>  
         <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
     </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('.swiper-container', {            
             loop: true, // Repetir el carrusel al final
             navigation: {
                 nextEl: '.swiper-button-next', // Selector del botón siguiente
