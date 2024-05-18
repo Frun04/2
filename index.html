@@ -10,11 +10,6 @@
             background-color: #333333; /* Gris oscuro */
             color: #ffffff; /* Blanco */
             font-family: Arial, sans-serif; /* Fuente predeterminada para todo el cuerpo */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             padding: 20px; /* Margen alrededor del cuerpo */
         }
@@ -26,15 +21,21 @@
         }
         .swiper-container {
             width: 100%;
-            height: 400px; /* Altura del carrusel */
+            max-width: 600px; /* Máximo ancho del carrusel */
             margin-top: 20px; /* Espacio entre el título y el carrusel */
         }
         .swiper-slide img {
             width: 100%; /* Ajusta el tamaño de las imágenes al carrusel */
             height: auto; /* Mantiene la proporción */
+            max-height: 300px; /* Máxima altura de las imágenes */
+            object-fit: contain; /* Ajusta las imágenes dentro del contenedor */
         }
         .linea {
             width: 100%;
+            text-align: center;
+            margin: 10px 0; /* Espacio vertical entre líneas de texto */
+        }
+        .center{
             text-align: center;
         }
         .izquierda {
@@ -47,11 +48,12 @@
 </head>
 <body>
     <h1>PackPresso</h1>
-    <p>Párrafo centrado.</p>
+    <p class= "center">Párrafo centrado.</p>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="xavimola.jpeg" alt="Este es Xavi Molero Prieto, un respeto "></div>
-            <div class="swiper-slide"><img src="Luffy-Marineford.jpg" alt="Este es Xavi Molero Prieto, un respeto "></div>
+            <div class="swiper-slide"><img src="ur10e.jpg" alt="Segunda imagen intercalada"></div>
+            <div class="swiper-slide"><img src="abb irb360.jpg" alt="Segunda imagen intercalada"></div>
             <!-- Agrega más imágenes aquí según sea necesario -->
         </div>
         <!-- Agregar paginación -->
@@ -64,6 +66,74 @@
     <div class="linea">
         <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
         <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
+    </div>
+    <div class="linea">
+        <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
+        <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
+    </div>
+    <div class="linea">
+        <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
+        <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
+        <div class="linea">
+            <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
+            <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
+        </div>
+        <div class="linea">
+            <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
+            <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
+        </div>
+        <div class="linea">
+            <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
+            <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
+        </div>
+        <div class="linea">
+            <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
+            <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
+            <div class="linea">
+                <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
+                <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
+            </div>
+            <div class="linea">
+                <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
+                <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
+            </div>
+            <div class="linea">
+                <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
+                <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
+            </div>
+            <div class="linea">
+                <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
+                <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
+                <div class="linea">
+                    <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
+                    <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
+                </div>
+                <div class="linea">
+                    <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
+                    <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
+                </div>
+                <div class="linea">
+                    <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
+                    <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
+                </div>
+                <div class="linea">
+                    <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
+                    <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
+                    <div class="linea">
+                        <p class="izquierda">Aquí debería de haber texto a la izquierda 1</p>
+                        <p class="izquierda">Aquí debería de haber texto a la izquierda 2</p>
+                    </div>
+                    <div class="linea">
+                        <p class="derecha">Aquí debería de haber texto a la derecha 1</p>
+                        <p class="derecha">Aquí debería de haber texto a la derecha 2</p>
+                    </div>
+                    <div class="linea">
+                        <p class="izquierda">Aquí debería de haber texto a la izquierda 3</p>
+                        <p class="izquierda">Aquí debería de haber texto a la izquierda 4</p>
+                    </div>
+                    <div class="linea">
+                        <p class="derecha">Aquí debería de haber texto a la derecha 3</p>
+                        <p class="derecha">Aquí debería de haber texto a la derecha 4</p>
     </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
