@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PackPresso</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Añade el enlace de Google Fonts para Shrikhand -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap">
     <style>
         body {
             background-image: url('fondo web negro.png'); /* Imagen de fondo */
@@ -18,7 +20,10 @@
         }
         h1 {
             font-size: 3em; /* Tamaño de fuente grande para el título */
-            font-family: 'SHRIKHAND', serif; /* Fuente específica para el título */
+            font-family: 'Shrikhand', cursive; /* Nueva fuente para el título */
+            border: 5px solid #082748; /* Color y grosor del borde */
+            padding: 10px; /* Espacio interno */
+            border-radius: 10px; /* Bordes redondeados */
             margin: 20px 0 0 0; /* Margen vertical (arriba), sin margen (derecha/abajo/izquierda) */
             text-align: center; /* Centra el texto dentro del contenedor */
         }
@@ -50,8 +55,8 @@
             align-items: center; /* Centra las imágenes y el texto dentro de las columnas */
         }
         .image-container img {
-            width: 50%; /* Ajusta el ancho de la imagen al 50% */
-            max-width: 50%; /* Ajusta el ancho máximo de la imagen al 50% */
+            width: 75%; /* Ajusta el ancho de la imagen al 50% */
+            max-width: auto; /* Ajusta el ancho máximo de la imagen al 50% */
             height: auto; /* Mantiene la proporción */
         }
         .texto {
@@ -60,7 +65,7 @@
         .full-width {
             width: 100%; /* Ancho completo para asegurar que los elementos no estén en columnas */
             text-align: center; /* Centrar el texto */
-            margin-top: 20px; /* Espacio superior para separar de los elementos anteriores */
+            margin-top: 20px; /* Espacio superior para separar de los elementos anteriores */   
         }
         .full-width p {
             margin: 0 auto; /* Centrar el párrafo */
@@ -117,25 +122,33 @@
     <div class="layout-container">
         <img src="Layout Planta.jpeg" alt="Imagen del layout de la planta">
     </div>
-    <p class="highlighted-text">Este proyecto consiste en la automatización del empaquetado y transporte de cápsulas de café, mediante el uso de cintas transportadoras, robots delta y cobots.</p>
+    <p class="highlighted-text">Este proyecto consiste en la automatización del empaquetado y transporte de cápsulas de café. Esto se consigue mediante el uso de cintas transportadoras, robots delta y cobots.</p>
     <h2>Robots Utilizados:</h2>
     <div class="image-container">
         <div>
-            <img src="ur10e.jpg" alt="Imagen del cobot ur10e">
-            <p class="highlighted-text1">Un cobot capaz de manipular cargas de hasta 10 kg suficiente
-                 para manipular las cajas llenas de cápsulas de café. El robot las recibe
-                  a través de una cinta y las deposita en un paquete grande de 20 unidades. </p>
+            <img src="Cobot ur10e.jpg" alt="Imagen del cobot ur10e">
+            <p class="highlighted-text1">Un cobot capaz de manipular cargas de hasta 10 kg, suficiente
+                 para manipular las cajas llenas de cápsulas de café. El cobot las recibe
+                 a través de una cinta y las deposita en un paquete grande con un máximo 20 unidades. 
+                 Se ha elegido este robot debido a el alcance que tiene, el cual permite llegar a recoger
+                 y depositar las cajas sin ningun inconveniente.</p>
         </div>
         <div>
-            <img src="abb irb360.jpg" alt="Imagen del robot industrial abb irb360">
-            <p class="highlighted-text">Robot delta empleado en el empaquetado de las cápsulas de café,
+            <img src="Abb irb360.jpg" alt="Imagen del robot industrial abb irb360">
+            <p class="highlighted-text1">Robot delta empleado en el empaquetado de las cápsulas de café,
                  con una capacidad de carga máxima de 1 kg, será el encargado de coger las
                   cápsulas de la cinta en movimiento y almacenarlas en paquetes de 10 unidades 
-                  y dejar el paquete en la siguiente cinta del proceso.</p>
+                  y dejar el paquete en la siguiente cinta del proceso. Se ha eledigo este robot dada su 
+                 alta velocidad de coger objetos con una alta precisión. </p>
         </div>
     </div>
     <h2>Objetivos de la automatización:</h2>
     <div class="full-width">
+        <ul>
+            <li>Mejorar en un 20% la eficiencia de la tarea// con el objetivo de sacar más cajas/día//</li>
+            <li>Reducir costes en un x%</li>
+            <li>Disminuir la probabilidad de fallo hasta ser inferior a 1%</li>
+        </ul>
         <p>Con este Proyecto cumplimos con las expectativas de mejora en eficiencia y eficacia de la empresa.
         Conseguimos aumentar la producción, medida en la cantidad de cápsulas que salen al día de fábrica,
         ya que los robots trabajan de manera continua, sin descansos, y sin errores. Esto repercute de manera 
@@ -152,20 +165,24 @@
             <div class="swiper-slide integrante"><img src="Enric.gif" alt="Imagen de Enric"></div>
             <div class="swiper-slide integrante"><img src="Jaime.gif" alt="Imagen de Jaime"></div>
             <div class="swiper-slide integrante"><img src="Alex.jpeg" alt="Imagen de Alex"></div>
-            <div class="swiper-slide integrante"><img src="Foto-PR2-Marcos.png" alt="Imagen de Marcos"></div>
+            <div class="swiper-slide integrante"><img src="Sergio.jpeg" alt="Imagen de Sergio"></div>
+            <div class="swiper-slide integrante"><img src="Joaquin.jpeg" alt="Imagen de Joaquín"></div>
         </div>
+        <!-- Flechas de navegación -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
-
+    <!-- Incluye el archivo JavaScript de Swiper -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Inicializa Swiper -->
     <script>
-        var swiper = new Swiper('.integrantes-container', {            
-            loop: true, // Repetir el carrusel al final
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
             navigation: {
-                nextEl: '.swiper-button-next', // Selector del botón siguiente
-                prevEl: '.swiper-button-prev', // Selector del botón anterior
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
+            loop: true,
         });
     </script>
 </body>
