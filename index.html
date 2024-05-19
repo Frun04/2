@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         body {
-            background-color: #3c3a3a; /* Gris oscuro */
+            background-image: url('fondo web negro.png'); /* Imagen de fondo */
+            background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+            background-repeat: repeat; /* No repite la imagen */
+           /* background-attachment: fixed; /* Fija la imagen en su lugar */
+            background-position: center; /* Centra la imagen */
             color: #ffffff; /* Blanco */
             margin: 0;
             padding: 20px; /* Margen alrededor del cuerpo */
@@ -62,20 +66,48 @@
             margin: 0 auto; /* Centrar el párrafo */
             max-width: 800px; /* Limitar el ancho del párrafo para mejor legibilidad */
         }
+        .highlighted-text {
+            text-align: center; 
+            border: 2px solid rgba(0, 0, 0, 0.5); /* Borde negro medio transparente */
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo negro medio transparente */
+            margin: 25px 0 0 0;
+        }
+        .highlighted-text1 {
+            text-align: center; 
+            border: 2px solid rgba(114, 112, 112, 0.5); /* Borde negro medio transparente */
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(111, 109, 109, 0.5); /* Fondo negro medio transparente */
+            margin: 25px 0 0 0;
+        }
         .integrantes-container {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 20px;
         }
-
         .integrante {
             text-align: center;
         }
-
         .integrante img {
             width: 100px;
             height: auto;
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #ffffff; /* Color blanco para las flechas */
+            position: absolute;
+            top: 50%; /* Alinea verticalmente las flechas al centro de las imágenes */
+            transform: translateY(-50%); /* Ajuste para centrar completamente */
+        }
+        .swiper-button-next {
+            right: 10px;
+        }
+        .swiper-button-prev {
+            left: 10px;
         }
     </style>
 </head>
@@ -83,19 +115,20 @@
     <h1>PackPresso</h1>
     <h2>Layout de la Estación:</h2>
     <div class="layout-container">
-        <img src="LayoutBno.jpg" alt="Imagen del layout de la planta">
+        <img src="Layout Planta.jpeg" alt="Imagen del layout de la planta">
     </div>
+    <p class="highlighted-text">Este proyecto consiste en la automatización del empaquetado y transporte de cápsulas de café, mediante el uso de cintas transportadoras, robots delta y cobots.</p>
     <h2>Robots Utilizados:</h2>
     <div class="image-container">
         <div>
             <img src="ur10e.jpg" alt="Imagen del cobot ur10e">
-            <p class="texto">Un cobot capaz de manipular cargas de hasta 10 kg suficiente
+            <p class="highlighted-text1">Un cobot capaz de manipular cargas de hasta 10 kg suficiente
                  para manipular las cajas llenas de cápsulas de café. El robot las recibe
                   a través de una cinta y las deposita en un paquete grande de 20 unidades. </p>
         </div>
         <div>
             <img src="abb irb360.jpg" alt="Imagen del robot industrial abb irb360">
-            <p class="texto">Robot delta empleado en el empaquetado de las cápsulas de café,
+            <p class="highlighted-text">Robot delta empleado en el empaquetado de las cápsulas de café,
                  con una capacidad de carga máxima de 1 kg, será el encargado de coger las
                   cápsulas de la cinta en movimiento y almacenarlas en paquetes de 10 unidades 
                   y dejar el paquete en la siguiente cinta del proceso.</p>
@@ -110,7 +143,7 @@
     </div>
     <h2>Video Muestra de la Estación: </h2>
 
-    <p> Aquí va el video de muestra de la estación pero no ta :P</p>
+    <p>Aquí va el video de muestra de la estación pero no ta :P</p>
 
     <h2>Integrantes del grupo B2:</h2>
     <div class="swiper-container integrantes-container">
@@ -119,6 +152,7 @@
             <div class="swiper-slide integrante"><img src="Enric.gif" alt="Imagen de Enric"></div>
             <div class="swiper-slide integrante"><img src="Jaime.gif" alt="Imagen de Jaime"></div>
             <div class="swiper-slide integrante"><img src="Alex.jpeg" alt="Imagen de Alex"></div>
+            <div class="swiper-slide integrante"><img src="Foto-PR2-Marcos.png" alt="Imagen de Marcos"></div>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
