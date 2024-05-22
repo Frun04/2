@@ -12,11 +12,11 @@
             background-image: url('fondo web negro.png'); /* Imagen de fondo */
             background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
             background-repeat: repeat; /* No repite la imagen */
-           /* background-attachment: fixed; /* Fija la imagen en su lugar */
             background-position: center; /* Centra la imagen */
             color: #ffffff; /* Blanco */
             margin: 0;
             padding: 20px; /* Margen alrededor del cuerpo */
+            overflow-x: hidden; /* Evita el desbordamiento horizontal */
         }
         h1 {
             font-size: 3em; /* Tamaño de fuente grande para el título */
@@ -34,14 +34,40 @@
             border-radius: 10px; /* Bordes redondeados */
             margin: 75px 0 0 0; /* Margen superior */
         }
-        .layout-container {
+        .layout-container, .integrantes-container {
+            position: relative;
             display: flex;
-            justify-content: center; /* Centra la imagen del layout horizontalmente */
+            justify-content: center;
+            align-items: center;
             margin-top: 20px;
         }
-        .layout-container img {
-            max-width: 100%;
-            height: auto; /* Mantiene la proporción */
+        .swiper-slide img {
+            display: block;
+            margin: 0 auto;
+        }
+        .layout-slide img {
+            max-width: 300px; /* Tamaño máximo para las imágenes del layout */
+            height: auto;
+        }
+        .integrantes-slide img {
+            max-width: 100px; /* Tamaño máximo para las imágenes de los integrantes */
+            height: auto;
+        }
+        .highlighted-text {
+            text-align: center; 
+            border: 2px solid rgba(0, 0, 0, 0.5); /* Borde negro medio transparente */
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo negro medio transparente */
+            margin: 25px 0 0 0;
+        }
+        .highlighted-text1 {
+            text-align: center; 
+            border: 2px solid rgba(114, 112, 112, 0.5); /* Borde negro medio transparente */
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(111, 109, 109, 0.5); /* Fondo negro medio transparente */
+            margin: 25px 0 0 0;
         }
         .image-container {
             display: grid;
@@ -71,36 +97,6 @@
             margin: 0 auto; /* Centrar el párrafo */
             max-width: 800px; /* Limitar el ancho del párrafo para mejor legibilidad */
         }
-        .highlighted-text {
-            text-align: center; 
-            border: 2px solid rgba(0, 0, 0, 0.5); /* Borde negro medio transparente */
-            padding: 10px;
-            border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo negro medio transparente */
-            margin: 25px 0 0 0;
-        }
-        .highlighted-text1 {
-            text-align: center; 
-            border: 2px solid rgba(114, 112, 112, 0.5); /* Borde negro medio transparente */
-            padding: 10px;
-            border-radius: 10px;
-            background-color: rgba(111, 109, 109, 0.5); /* Fondo negro medio transparente */
-            margin: 25px 0 0 0;
-        }
-        .integrantes-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .integrante {
-            text-align: center;
-        }
-        .integrante img {
-            width: 100px;
-            height: auto;
-        }
         .swiper-button-next,
         .swiper-button-prev {
             color: #ffffff; /* Color blanco para las flechas */
@@ -119,15 +115,26 @@
 <body>
     <h1>PackPresso</h1>
     <h2>Layout de la Estación:</h2>
-    <div class="layout-container">
-        <img src="Layout Planta.jpeg" alt="Imagen del layout de la planta">
+    <div class="swiper-container layout-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide layout-slide"><img src="Layout 1.jpeg" alt="Imagen del layout de la planta 1"></div>
+            <div class="swiper-slide layout-slide"><img src="Layout 2.jpeg" alt="Imagen del layout de la planta 2"></div>
+            <div class="swiper-slide layout-slide"><img src="Layout 3.jpeg" alt="Imagen del layout de la planta 3"></div>
+            <div class="swiper-slide layout-slide"><img src="Layout Cenital.jpeg" alt="Imagen del layout de la planta cenital"></div>
+            <!-- Añade más imágenes según sea necesario -->
+        </div>
+        <!-- Flechas de navegación -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
-    <p class="highlighted-text">Este proyecto consiste en la automatización del empaquetado y transporte de cápsulas de café. Esto se consigue mediante el uso de cintas transportadoras, robots delta y cobots.</p>
+    <p class="highlighted-text">Este proyecto consiste en la automatización del empaquetado y transporte de cápsulas de café
+. 
+        Esto se consigue mediante el uso de cintas transportadoras, robots delta y cobots.</p>
     <h2>Robots Utilizados:</h2>
     <div class="image-container">
         <div>
             <img src="Cobot ur10e.jpg" alt="Imagen del cobot ur10e">
-            <p class="highlighted-text1">Un cobot capaz de manipular cargas de hasta 10 kg, suficiente
+            <p class="highlighted-text">Un cobot capaz de manipular cargas de hasta 10 kg, suficiente
                  para manipular las cajas llenas de cápsulas de café. El cobot las recibe
                  a través de una cinta y las deposita en un paquete grande con un máximo 20 unidades. 
                  Se ha elegido este robot debido a el alcance que tiene, el cual permite llegar a recoger
@@ -135,7 +142,7 @@
         </div>
         <div>
             <img src="Abb irb360.jpg" alt="Imagen del robot industrial abb irb360">
-            <p class="highlighted-text1">Robot delta empleado en el empaquetado de las cápsulas de café,
+            <p class="highlighted-text">Robot delta empleado en el empaquetado de las cápsulas de café,
                  con una capacidad de carga máxima de 1 kg, será el encargado de coger las
                   cápsulas de la cinta en movimiento y almacenarlas en paquetes de 10 unidades 
                   y dejar el paquete en la siguiente cinta del proceso. Se ha eledigo este robot dada su 
@@ -161,12 +168,11 @@
     <h2>Integrantes del grupo B2:</h2>
     <div class="swiper-container integrantes-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide integrante"><img src="Fran.gif" alt="Imagen de Francesc"></div>
-            <div class="swiper-slide integrante"><img src="Enric.gif" alt="Imagen de Enric"></div>
-            <div class="swiper-slide integrante"><img src="Jaime.gif" alt="Imagen de Jaime"></div>
-            <div class="swiper-slide integrante"><img src="Alex.jpeg" alt="Imagen de Alex"></div>
-            <div class="swiper-slide integrante"><img src="Sergio.jpeg" alt="Imagen de Sergio"></div>
-            <div class="swiper-slide integrante"><img src="Joaquin.jpeg" alt="Imagen de Joaquín"></div>
+            <div class="swiper-slide integrantes-slide"><img src="Fran.gif" alt="Imagen de Francesc"></div>
+            <div class="swiper-slide integrantes-slide"><img src="Enric.gif" alt="Imagen de Enric"></div>
+            <div class="swiper-slide integrantes-slide"><img src="Jaime.gif" alt="Imagen de Jaime"></div>
+            <div class="swiper-slide integrantes-slide"><img src="Alex.jpeg" alt="Imagen de Alex"></div>
+            <div class="swiper-slide integrantes-slide"><img src="Marcos.png" alt="Imagen de Sergio"></div>
         </div>
         <!-- Flechas de navegación -->
         <div class="swiper-button-next"></div>
@@ -176,7 +182,16 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- Inicializa Swiper -->
     <script>
-        var swiper = new Swiper('.swiper-container', {
+        var layoutSwiper = new Swiper('.layout-container', {
+            slidesPerView: 1,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+        });
+
+        var integrantesSwiper = new Swiper('.integrantes-container', {
             slidesPerView: 1,
             navigation: {
                 nextEl: '.swiper-button-next',
