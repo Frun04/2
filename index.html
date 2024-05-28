@@ -5,34 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PackPresso</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- Añade el enlace de Google Fonts para Shrikhand -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap">
     <style>
-        body {
-            background-image: url('fondo web negro.png'); /* Imagen de fondo */
-            background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
-            background-repeat: repeat; /* No repite la imagen */
-            background-position: center; /* Centra la imagen */
-            color: #ffffff; /* Blanco */
+        html, body {
+            background-image: url('fondo web negro.png');
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+            color: #ffffff;
             margin: 0;
-            padding: 20px; /* Margen alrededor del cuerpo */
-            overflow-x: hidden; /* Evita el desbordamiento horizontal */
+            padding: 20px;
+            overflow-x: hidden !important; /* Ensures horizontal overflow is hidden */
+            width: 100%;
+            box-sizing: border-box;
         }
         h1 {
-            font-size: 3em; /* Tamaño de fuente grande para el título */
-            font-family: 'Shrikhand', cursive; /* Nueva fuente para el título */
-            border: 5px solid #082748; /* Color y grosor del borde */
-            padding: 10px; /* Espacio interno */
-            border-radius: 10px; /* Bordes redondeados */
-            margin: 20px 0 0 0; /* Margen vertical (arriba), sin margen (derecha/abajo/izquierda) */
-            text-align: center; /* Centra el texto dentro del contenedor */
+            font-size: 3em;
+            font-family: 'Shrikhand', cursive;
+            border: 5px solid #082748;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
         }
         h2 {
-            text-align: center; /* Centra el texto */
-            border: 2px solid #126ccd; /* Color y grosor del borde */
-            padding: 10px; /* Espacio interno */
-            border-radius: 10px; /* Bordes redondeados */
-            margin: 75px 0 0 0; /* Margen superior */
+            text-align: center;
+            border: 2px solid #126ccd;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 75px;
         }
         .layout-container, .integrantes-container {
             position: relative;
@@ -46,63 +47,54 @@
             margin: 0 auto;
         }
         .layout-slide img {
-            max-width: 300px; /* Tamaño máximo para las imágenes del layout */
+            max-width: 100%;
             height: auto;
         }
         .integrantes-slide img {
-            max-width: 100px; /* Tamaño máximo para las imágenes de los integrantes */
+            max-width: 100px;
             height: auto;
         }
-        .highlighted-text {
-            text-align: center; 
-            border: 2px solid rgba(0, 0, 0, 0.5); /* Borde negro medio transparente */
+        .highlighted-text, .highlighted-text1 {
+            text-align: center;
+            border: 2px solid rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo negro medio transparente */
-            margin: 25px 0 0 0;
-        }
-        .highlighted-text1 {
-            text-align: center; 
-            border: 2px solid rgba(114, 112, 112, 0.5); /* Borde negro medio transparente */
-            padding: 10px;
-            border-radius: 10px;
-            background-color: rgba(111, 109, 109, 0.5); /* Fondo negro medio transparente */
-            margin: 25px 0 0 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-top: 25px;
         }
         .image-container {
-            display: grid; 
-            grid-template-columns: 1fr 1fr; /* Divide el contenedor en dos columnas de igual tamaño */ 
-            gap: 20px; /* Espacio entre las imágenes */ 
-            margin-top: 20px; 
-        } 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
         .image-container div {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centra las imágenes y el texto dentro de las columnas */
+            align-items: center;
         }
         .image-container img {
-            width: 75%; /* Ajusta el ancho de la imagen al 50% */
-            max-width: auto; /* Ajusta el ancho máximo de la imagen al 50% */
-            height: auto; /* Mantiene la proporción */
+            width: 75%;
+            height: auto;
         }
         .texto {
-            margin-top: 10px; /* Espacio entre la imagen y el texto */
+            margin-top: 10px;
         }
         .full-width {
-            width: 100%; /* Ancho completo para asegurar que los elementos no estén en columnas */
-            text-align: center; /* Centrar el texto */
-            margin-top: 20px; /* Espacio superior para separar de los elementos anteriores */   
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
         }
         .full-width p {
-            margin: 0 auto; /* Centrar el párrafo */
-            max-width: 800px; /* Limitar el ancho del párrafo para mejor legibilidad */
+            margin: 0 auto;
+            max-width: 800px;
         }
         .swiper-button-next,
         .swiper-button-prev {
-            color: #ffffff; /* Color blanco para las flechas */
+            color: #ffffff;
             position: absolute;
-            top: 50%; /* Alinea verticalmente las flechas al centro de las imágenes */
-            transform: translateY(-50%); /* Ajuste para centrar completamente */
+            top: 50%;
+            transform: translateY(-50%);
         }
         .swiper-button-next {
             right: 10px;
@@ -110,11 +102,18 @@
         .swiper-button-prev {
             left: 10px;
         }
-
-        /* Media query para dispositivos móviles */
         @media only screen and (max-width: 600px) {
-            body {
-                overflow-x: hidden; /* Oculta el desbordamiento horizontal en dispositivos móviles */
+            h1 {
+                font-size: 2em;
+            }
+            .highlighted-text, .highlighted-text1 {
+                font-size: 0.9em;
+            }
+            .image-container {
+                grid-template-columns: 1fr;
+            }
+            .layout-slide img, .integrantes-slide img {
+                max-width: 90%;
             }
         }
     </style>
@@ -128,14 +127,11 @@
             <div class="swiper-slide layout-slide"><img src="Layout 2.jpeg" alt="Imagen del layout de la planta 2"></div>
             <div class="swiper-slide layout-slide"><img src="Layout 3.jpeg" alt="Imagen del layout de la planta 3"></div>
             <div class="swiper-slide layout-slide"><img src="Layout Cenital.jpeg" alt="Imagen del layout de la planta cenital"></div>
-            <!-- Añade más imágenes según sea necesario -->
         </div>
-        <!-- Flechas de navegación -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
-    <p class="highlighted-text">Este proyecto consiste en la automatización del empaquetado y transporte de cápsulas de café
-. 
+    <p class="highlighted-text">Este proyecto consiste en la automatización del empaquetado y transporte de cápsulas de café.
         Esto se consigue mediante el uso de cintas transportadoras, robots delta y cobots.</p>
     <h2>Robots Utilizados:</h2>
     <div class="image-container">
@@ -143,7 +139,7 @@
             <img src="Cobot ur10e.jpg" alt="Imagen del cobot ur10e">
             <p class="highlighted-text">Un cobot capaz de manipular cargas de hasta 10 kg, suficiente
                  para manipular las cajas llenas de cápsulas de café. El cobot las recibe
-                 a través de una cinta y las deposita en un paquete grande con un máximo 20 unidades. 
+                 a través de una cinta y las deposita en un paquete grande con un máximo 20 unidades.
                  Se ha elegido este robot debido a el alcance que tiene, el cual permite llegar a recoger
                  y depositar las cajas sin ningun inconveniente.</p>
         </div>
@@ -151,27 +147,25 @@
             <img src="Abb irb360.jpg" alt="Imagen del robot industrial abb irb360">
             <p class="highlighted-text">Robot delta empleado en el empaquetado de las cápsulas de café,
                  con una capacidad de carga máxima de 1 kg, será el encargado de coger las
-                  cápsulas de la cinta en movimiento y almacenarlas en paquetes de 10 unidades 
-                  y dejar el paquete en la siguiente cinta del proceso. Se ha eledigo este robot dada su 
+                  cápsulas de la cinta en movimiento y almacenarlas en paquetes de 10 unidades
+                  y dejar el paquete en la siguiente cinta del proceso. Se ha eledigo este robot dada su
                  alta velocidad de coger objetos con una alta precisión. </p>
         </div>
     </div>
     <h2>Objetivos de la automatización:</h2>
     <div class="full-width">
         <ul>
-            <li>Mejorar en un 20% la eficiencia de la tarea// con el objetivo de sacar más cajas/día//</li>
+            <li>Mejorar en un 20% la eficiencia de la tarea</li>
             <li>Reducir costes en un x%</li>
             <li>Disminuir la probabilidad de fallo hasta ser inferior a 1%</li>
         </ul>
         <p>Con este Proyecto cumplimos con las expectativas de mejora en eficiencia y eficacia de la empresa.
         Conseguimos aumentar la producción, medida en la cantidad de cápsulas que salen al día de fábrica,
-        ya que los robots trabajan de manera continua, sin descansos y sin errores. Esto repercute de manera 
+        ya que los robots trabajan de manera continua, sin descansos y sin errores. Esto repercute de manera
         positiva en el beneficio de la empresa, a la vez que reduce los costes de obtención del producto final.</p>
     </div>
-    <h2>Video Muestra de la Estación: </h2>
-
+    <h2>Video Muestra de la Estación:</h2>
     <p>Aquí va el video de muestra de la estación pero no ta :P</p>
-
     <h2>Integrantes del grupo B2:</h2>
     <div class="swiper-container integrantes-container">
         <div class="swiper-wrapper">
@@ -181,13 +175,10 @@
             <div class="swiper-slide integrantes-slide"><img src="Alex.jpeg" alt="Imagen de Alex"></div>
             <div class="swiper-slide integrantes-slide"><img src="Marcos.png" alt="Imagen de Sergio"></div>
         </div>
-        <!-- Flechas de navegación -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
-    <!-- Incluye el archivo JavaScript de Swiper -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- Inicializa Swiper -->
     <script>
         var layoutSwiper = new Swiper('.layout-container', {
             slidesPerView: 1,
